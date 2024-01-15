@@ -1,0 +1,178 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font: normal 16px/1.5 "Helvetica Neue", sans-serif;
+  background: #0F0F0F;
+  color: #0F0F0F;
+  overflow-x: hidden;
+}
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+h5 {
+  margin-top: 0;
+  text-align: left;
+}
+.header {
+  background: #0F0F0F;
+  padding: 30px 0 20px;
+}
+.container {
+  color: #fff;
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: center;
+  width: 90%;
+}
+h1 {
+  font-family: "Russo One", sans-serif;
+  font-size: 3.5rem;
+}
+.timeline ul {
+  background: #222831;
+  background-size: 8px 8px;
+  padding: 0px 0px 50px;
+}
+.timeline ul li {
+  background: #FFF;
+  font-family: "Maven Pro", sans-serif;
+  list-style-type: none;
+  padding-top: 50px;
+  position: relative;
+  margin: 0 auto;
+  width: 4px;
+}
+.timeline ul li::after {
+  background: inherit;
+  border-radius: 50%;
+  bottom: 7px;
+  content: "";
+  height: 15px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 15px;
+}
+.timeline ul li div {
+  background: #fff;
+  box-shadow: 10px 10px 0px #393E46;
+  bottom: 0;
+  color: #000;
+  position: relative;
+  padding: 10px 15px 15px;
+  width: 400px;
+}
+.timeline ul li:nth-child(even) div::after,
+.timeline ul li div::before {
+  border-style: solid;
+  bottom: 7px;
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 0;
+}
+.timeline ul li:nth-child(odd) div {
+  left: 45px;
+}
+.timeline ul li:nth-child(odd) div::before {
+  border-width: 8px 16px 8px 0;
+  border-color: transparent #fff transparent transparent;
+  left: -15px;
+}
+.timeline ul li:nth-child(even) div {
+  left: -439px;
+}
+.timeline ul li:nth-child(even) div::before {
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent #393E46;
+  right: -25px;
+  bottom: -1px;
+}
+.timeline ul li:nth-child(even) div::after {
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent #fff;
+  right: -15px;
+}
+time {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Russo One", sans-serif;
+  padding: 0;
+  margin: 0 0 5px;
+}
+.title {
+  font-family: "Maven Pro", sans-serif;
+  margin-bottom: 5px;
+}
+.company {
+  font-family: "Russo One", sans-serif;
+  margin-bottom: -1px;
+}
+.location {
+  font-family: "Russo One", sans-serif;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.description {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 14px;
+}
+.timeline ul li::after {
+  transition: background 0.5s ease-in-out;
+}
+.timeline ul li.inView::after {
+  background: #fff;
+}
+.timeline ul li div {
+  opacity: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.timeline ul li:nth-child(odd) div {
+  transform: translate3d(200px, 0, 0);
+}
+.timeline ul li:nth-child(even) div {
+  transform: translate3d(-200px, 0, 0);
+}
+.timeline ul li.inView div {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+@media screen and (max-width: 900px) {
+  .timeline ul li div {
+    width: 250px;
+  }
+  .timeline ul li:nth-child(even) div {
+    left: -289px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .timeline ul li {
+    margin-left: 20px;
+  }
+  .timeline ul li div {
+    width: calc(100vw - 91px);
+  }
+  .timeline ul li:nth-child(even) div {
+    left: 45px;
+  }
+  .timeline ul li:nth-child(even) div::after {
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #fff transparent transparent;
+    left: -15px;
+  }
+  .timeline ul li:nth-child(even) div::before {
+    border: none;
+  }
+}
